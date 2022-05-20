@@ -42,7 +42,9 @@ if($_GET['action'] == "edit"){
         <label>Teach Exp</label>
         <input type="text" name="TeachExp" value="<?= $TeachExp; ?>" class="form-control" readonly/>
         <label>ID Card</label>
-        <input type="text" name="IdCard" value="<?= $IdCard; ?>" class="form-control" readonly/>
+        <br> 
+        <img src="<?= $IdCard; ?>" alt="id card" height=100 width=100 />
+        <br> 
         <label>Verif Status</label>
         <input type="text" name="Verif_Status" value="<?= $Verif_Status; ?>" class="form-control" readonly/>
 

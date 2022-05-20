@@ -53,7 +53,7 @@ $hasil = $pdo->query($sql);
             <td><?= $row['Subject_Name']; ?></td>
             <td><?= $row['Verif_Score']; ?></td>
             <td><?= $row['TeachExp']; ?></td>
-            <td><?= $row['IdCard']; ?></td>
+            <td><img src="<?= $row['IdCard']; ?>" alt="id card" height=100 width=100 /></td>
             <td><?= $row['Verif_Status']; ?></td>
             <td>
                 <a href="main.php?page=verif-form&action=edit&Verif_Id=<?= $row['Verif_Id']; ?>" class="btn btn-warning btn-sm">
