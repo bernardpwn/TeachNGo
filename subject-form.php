@@ -27,7 +27,7 @@ if($_GET['action'] == "add"){
 <form action="process/subject.php?action=<?= $action; ?>" method="post">
     <div class="form-group">
         <label>Subject Name</label>
-        <input type="text" name="Subject_Name" value="<?= $Subject_Name; ?>" class="form-control" />
+        <input type="text" name="Subject_Name" value="<?= $Subject_Name; ?>" class="form-control" required/>
     </div>
     <input type="hidden" name="Subject_Id" value="<?= $Subject_Id ?>" />
     <button type="submit">Save</button>

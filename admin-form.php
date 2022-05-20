@@ -34,11 +34,11 @@ if($_GET['action'] == "add"){
 <form action="process/admin.php?action=<?= $action; ?>" method="post">
     <div class="form-group">
         <label>Username</label>
-        <input type="text" name="Admin_Username" value="<?= $Admin_Username; ?>" class="form-control" />
+        <input type="text" name="Admin_Username" value="<?= $Admin_Username; ?>" class="form-control" required/>
     </div>
     <div class="form-group">
         <label>Password</label>
-        <input id="pass" type="password" name="Admin_Pass" value="" class="form-control" />
+        <input id="pass" type="password" name="Admin_Pass" value="" class="form-control" required/>
         <input type="checkbox"  onclick="FunctionVisibility()">Show Password
     </div>
     <input type="hidden" name="Admin_Id" value="<?= $Admin_Id ?>" />
