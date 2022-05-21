@@ -32,6 +32,7 @@ $hasil = $pdo->query($sql);
             <th>Class ID</th>
             <th>Class Creation</th>
             <th>Teacher Name</th>
+            <th>Subject Name</th>
             <th>Admin Name</th>
             <th>Class Status</th>
         </tr>
@@ -45,6 +46,7 @@ $hasil = $pdo->query($sql);
             <td><?= $row['Class_Id']; ?></td>
             <td><?= $row['Class_Creation']; ?></td>
             <td><?= $row['User_Name']; ?></td>
+            <td><?= $row['Subject_Name']; ?></td>
             <td><?= $row['Admin_Username']; ?></td>
             <td><?= $row['Class_Status']; ?></td>
         </tr>
@@ -78,7 +80,7 @@ function myFunction2() {
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[5];
+    td = tr[i].getElementsByTagName("td")[6];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
