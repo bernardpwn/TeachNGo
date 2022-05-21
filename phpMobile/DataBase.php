@@ -42,8 +42,8 @@ class DataBase
         $result = mysqli_query($this->connect, $this->sql);
         $row = mysqli_fetch_assoc($result);
         if (mysqli_num_rows($result) != 0) {
-            $dbemail = $row['email'];
-            $dbpassword = $row['password'];
+            $dbemail = $row['User_Email'];
+            $dbpassword = $row['User_Pass'];
             if ($dbemail == $email && password_verify($password, $dbpassword)) {
                 $login = true;
             } else $login = false;
