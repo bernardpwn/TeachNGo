@@ -47,7 +47,7 @@ if (!isset($_SESSION['username'])) {
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="main.php?page=admin">
-                  <span data-feather="users"></span>
+                  <span data-feather="user"></span>
                   Admin
                 </a>
               </li>
@@ -58,8 +58,20 @@ if (!isset($_SESSION['username'])) {
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="main.php?page=user">
+                  <span data-feather="users"></span>
+                  User
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="main.php?page=class">
+                  <span data-feather="calendar"></span>
+                  Class
+                </a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="main.php?page=verif">
-                  <span data-feather="file"></span>
+                  <span data-feather="check-square"></span>
                   Verification
                 </a>
               </li>

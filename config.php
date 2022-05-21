@@ -1,6 +1,6 @@
 <?php 
 
-$server = "10.26.192.3";
+$server = "34.101.231.16";
 $user = "root";
 $pass = "capstoneproject";
 $database = "techngo";
