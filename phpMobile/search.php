@@ -15,7 +15,7 @@
     $response = array();
     if(isset($_POST['search'])){
 		$search=$_POST['search'];
-		$q=mysqli_query($conn,"SELECT * FROM Class JOIN Subject ON Class.Subject_Id = Subject.Subject_Id JOIN User ON User.User_Id= Class.User_Id WHERE User_Name LIKE '%$search%'");
+		$q=mysqli_query($conn,"SELECT * FROM Class JOIN Subject ON Class.Subject_Id = Subject.Subject_Id JOIN User ON User.User_Id= Class.User_Id WHERE User_Name LIKE '%$search%' AND Class_Status = 'Active'");
 		
         $response["data"] = array();
 

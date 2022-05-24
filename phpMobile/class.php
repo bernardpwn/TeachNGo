@@ -15,10 +15,10 @@
     $response = array();
     if(isset($_POST['subject_name'])){
 		$subject_name=$_POST['subject_name'];
-		$q=mysqli_query($conn,"SELECT * FROM Class JOIN Subject ON Class.Subject_Id = Subject.Subject_Id JOIN User ON User.User_Id= Class.User_Id WHERE Subject_Name='$subject_name'");
+		$q=mysqli_query($conn,"SELECT * FROM Class JOIN Subject ON Class.Subject_Id = Subject.Subject_Id JOIN User ON User.User_Id= Class.User_Id WHERE Subject_Name='$subject_name' AND Class_Status = 'Active'");
 		
         $response["data"] = array();
-        
+  
         while($r = $q -> fetch_assoc()){
             $mhs = array();
             $mhs["Class_Id"] = $r["Class_Id"];
