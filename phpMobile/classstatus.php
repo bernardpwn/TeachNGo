@@ -1,5 +1,5 @@
 <?php
-#Untuk menyelesaikan order
+#Untuk update status class Active / Inactive
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";
@@ -14,19 +14,22 @@
 	  die("Connection failed: " . mysqli_connect_error());
 	}
     $response = array();
-    if(isset($_POST['orderid'])){
-		$orderid=$_POST['orderid'];
-		$q=mysqli_query($conn,"Update Orders SET Order_Status = 'Completed' WHERE Order_Id = $orderid");
-		
+    if(isset($_POST['status']) && isset($_POST['classid'])){
+		$status=$_POST['status'];
+        $classid=$_POST['classid'];
+		$q=mysqli_query($conn,"UPDATE Class SET Class_Status = '$status' WHERE Class_Id=$classid");
+
         if($q){
             $response["status"] = 1;
-            $response["message"] = "Status order berhasil diupdate";
+            $response["message"] = "Status class berhasil diupdate";
             echo json_encode($response);
-        } else {
+        }else{
             $response["success"]=0;
-            $response["message"]="Status order gagal diupdate";
+            $response["message"]="Status class gagal diupdate";
             echo json_encode($response);
         }
+
+        
     }
     else{
         $response["status"] = -1;
