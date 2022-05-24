@@ -22,7 +22,7 @@ if($_GET['action'] == "edit"){
         ]);
         
         $sql = "INSERT INTO Class (Subject_Id, User_Id, Admin_Id, Class_Creation)
-                VALUES (?, ?, ?, curdate())";
+                VALUES (?, ?, ?, NOW())";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             $_POST['Subject_Id'], $_POST['User_Id'], $_SESSION['username']
