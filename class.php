@@ -1,40 +1,94 @@
 <?php
-    header('Content-type:application/json;charset=utf-8');
-	$servername = "34.101.231.16";
-	$username = "root";
-	$password = "capstoneproject";
-	$dbname = "techngo";
+//1. Koneksi db
+require 'functions.php';
+$pdo = koneksiDb();
 
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
+//2. SQL
+$sql = "SELECT * FROM Class JOIN Subject ON Subject.Subject_Id=Class.Subject_Id JOIN User ON User.User_Id=Class.User_Id JOIN Admin ON Admin.Admin_Id=Class.Admin_Id";
 
-	// Check connection
-	if (!$conn) {
-	  die("Connection failed: " . mysqli_connect_error());
-	}
-    $response = array();
-    if(isset($_POST['subject_name'])){
-		$subject_name=$_POST['subject_name'];
-		$q=mysqli_query($conn,"SELECT * FROM Class JOIN Subject ON Class.Subject_Id = Subject.Subject_Id JOIN User ON User.User_Id= Class.User_Id WHERE Subject_Name='$subject_name' AND Class_Status = 'Active'");
-		
-        $response["data"] = array();
-  
-        while($r = $q -> fetch_assoc()){
-            $mhs = array();
-            $mhs["Class_Id"] = $r["Class_Id"];
-			$mhs["User_Name"] = $r["User_Name"];
-            $mhs["Subject_Name"] = $r["Subject_Name"];
-            $mhs["User_Gender"] = $r["User_Gender"];
-			$mhs["User_Photo"] = $r["User_Photo"];
-            array_push($response["data"], $mhs);
-        }
-        $response["status"] = 1;
-        $response["message"] = "Data class berhasil dibaca";
-        echo json_encode($response);
-    }
-    else{
-        $response["status"] = 0;
-        $response["message"] = "Tidak ada data";
-        echo json_encode($response);
-    }
+//3. Prepare & Execute
+$hasil = $pdo->query($sql);
+
+
+
+//4. Tampilan
+
 ?>
+<h1 class="mt-3 h2">Class List</h1>
+<input type="text" id="myInput3" style="background-color:#EBEDEF;" class="form-control form-control-dark w-100" onkeyup="myFunction()" placeholder="Search Teacher Name.. " title="Type in a name">
+<br>
+<label >Status : </label>
+<select id="myInput4" onchange="myFunction2()">
+  <option value="-">-</option>
+  <option value="Active">Active</option>
+  <option value="Inactive">Inactive</option>
+</select>
+  
+
+<div class="table-responsive mt-3">
+    <table class="table" id="table">
+        <tr>
+            <th>No.</th>
+            <th>Class ID</th>
+            <th>Class Creation</th>
+            <th>Teacher Name</th>
+            <th>Subject Name</th>
+            <th>Admin Name</th>
+            <th>Class Status</th>
+        </tr>
+        <?php
+        $i = 0;
+        while($row = $hasil->fetch()):
+        $i++;
+        ?>
+        <tr>
+            <td><?= $i; ?></td>
+            <td><?= $row['Class_Id']; ?></td>
+            <td><?= $row['Class_Creation']; ?></td>
+            <td><?= $row['User_Name']; ?></td>
+            <td><?= $row['Subject_Name']; ?></td>
+            <td><?= $row['Admin_Username']; ?></td>
+            <td><?= $row['Class_Status']; ?></td>
+        </tr>
+        <?php endwhile; ?>
+    </table>
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput3");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+function myFunction2() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput4");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[6];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
