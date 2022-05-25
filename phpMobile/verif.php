@@ -1,5 +1,5 @@
 <?php
-#Untuk membuat order baru berdasarkan class_id yang dipilih
+#Untuk input verif
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";
@@ -14,19 +14,21 @@
 	  die("Connection failed: " . mysqli_connect_error());
 	}
     $response = array();
-    if(isset($_POST['classid']) && isset($_POST['userid'])){
-		$classid=$_POST['classid'];
+    if(isset($_POST['idcard']) && isset($_POST['teachexp']) && isset($_POST['userid']) && isset($_POST['subject'])  && isset($_POST['score'])){
+		$idcard=$_POST['idcard'];
+        $teachexp=$_POST['teachexp'];
         $userid=$_POST['userid'];
-		$q=mysqli_query($conn,"INSERT INTO Orders (Order_Date, Class_Id, User_Id) VALUES (NOW(), $classid, $userid)");
-        $response["data"] = array();
+        $subject=$_POST['subject'];
+        $score=$_POST['score'];
+		$q=mysqli_query($conn,"INSERT INTO Verification (Verif_Creation, IdCard, TeachExp, User_Id, Subject_Id, Verif_Score) VALUES (NOW(), '$idcard', $teachexp, $userid, (SELECT Subject_Id FROM Subject WHERE Subject_Name = '$subject'), $score)");
   
         if($q){
             $response["status"] = 1;
-            $response["message"] = "Data order berhasil ditambah";
+            $response["message"] = "Data verif berhasil ditambah";
             echo json_encode($response);
         }else{
             $response["success"]=0;
-            $response["message"]="Data order gagal ditambah";
+            $response["message"]="Data verif gagal ditambah";
             echo json_encode($response);
         }
     }
