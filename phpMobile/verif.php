@@ -27,7 +27,7 @@
             $response["message"] = "Data verif berhasil ditambah";
             echo json_encode($response);
         }else{
-            $response["success"]=0;
+            $response["status"]=0;
             $response["message"]="Data verif gagal ditambah";
             echo json_encode($response);
         }

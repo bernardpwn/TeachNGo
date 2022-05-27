@@ -25,7 +25,7 @@
             $response["message"] = "Data order berhasil ditambah";
             echo json_encode($response);
         }else{
-            $response["success"]=0;
+            $response["status"]=0;
             $response["message"]="Data order gagal ditambah";
             echo json_encode($response);
         }

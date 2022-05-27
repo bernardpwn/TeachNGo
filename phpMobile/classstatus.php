@@ -24,7 +24,7 @@
             $response["message"] = "Status class berhasil diupdate";
             echo json_encode($response);
         }else{
-            $response["success"]=0;
+            $response["status"]=0;
             $response["message"]="Status class gagal diupdate";
             echo json_encode($response);
         }

@@ -31,7 +31,7 @@
             $response["message"] = "Profile berhasil diupdate";
             echo json_encode($response);
         }else{
-            $response["success"]=0;
+            $response["status"]=0;
             $response["message"]="Profile gagal diupdate";
             echo json_encode($response);
         }
