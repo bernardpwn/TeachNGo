@@ -21,7 +21,7 @@
         $userid=$_POST['userid'];
         $response["data"] = array();
         if ($userrole == 'Teacher'){
-            $q=mysqli_query($conn,"SELECT Order_Id, Orders.Class_Id, Class.User_Id AS Student_Id, Order_Status FROM Orders JOIN Class ON Orders.Class_Id = Class.Class_Id JOIN User ON Orders.User_Id = User.User_Id WHERE Class.User_Id = $userid AND Order_Status = 'On Going'");
+            $q=mysqli_query($conn,"SELECT Order_Id, Orders.Class_Id, Orders.User_Id AS Student_Id, Order_Status FROM Orders JOIN Class ON Orders.Class_Id = Class.Class_Id JOIN User ON Orders.User_Id = User.User_Id WHERE Class.User_Id = $userid AND Order_Status = 'On Going'");
             while($r = $q -> fetch_assoc()){
                 $mhs = array();
                 $mhs["Order_Id"] = $r["Order_Id"]; 
@@ -31,7 +31,7 @@
                 array_push($response["data"], $mhs);
             }
         } else {
-            $q=mysqli_query($conn,"SELECT Order_Id, Orders.Class_Id, Orders.User_Id AS Teacher_Id, Order_Status FROM Orders JOIN Class ON Orders.Class_Id = Class.Class_Id JOIN User ON Orders.User_Id = User.User_Id WHERE Orders.User_Id = $userid AND Order_Status = 'On Going'");
+            $q=mysqli_query($conn,"SELECT Order_Id, Orders.Class_Id, Class.User_Id AS Teacher_Id, Order_Status FROM Orders JOIN Class ON Orders.Class_Id = Class.Class_Id JOIN User ON Orders.User_Id = User.User_Id WHERE Orders.User_Id = $userid AND Order_Status = 'On Going'");
             while($r = $q -> fetch_assoc()){
                 $mhs = array();
                 $mhs["Order_Id"] = $r["Order_Id"];
