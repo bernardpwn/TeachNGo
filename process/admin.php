@@ -1,5 +1,5 @@
-<?php // /process/adminn.php
-
+<?php
+# php process untuk melakukan action seperti menambahkan admin, memperbaharui data admin ataupun menghapus akun admin pada database yang dimiliki
 require '../functions.php';
 $pdo = koneksiDb();
 

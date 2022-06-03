@@ -1,4 +1,5 @@
-<?php // /process/subject.php
+<?php
+# php process untuk melakukan action seperti menambahkan subject pelajaran baru, memperbaharui / edit data subject, ataupun menghapus subject pada database yang dimiliki
 
 require '../functions.php';
 $pdo = koneksiDb();

@@ -1,4 +1,6 @@
-<?php // /process/verif.php
+<?php
+# php process untuk melakukan pembaharuan status verifikasi, yang dilanjutkan mengubah role user yang melakukan request verifikasi menjadi teacher, selanjutnya menambahkan kelas baru
+# berdasarkan detail dari kelas yang telah disetujui untuk diverifikasi. Ada juga untuk process reject verifikasi pada verification request yang dianggap tidak memenuhi syarat yang dibutuhkan
 session_start();
 require '../functions.php';
 $pdo = koneksiDb();
