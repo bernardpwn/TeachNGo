@@ -1,5 +1,5 @@
 <?php
-
+# Berisi detail alamat server, username dan password pada database yang digunakan, serta nama database yang digunakan.
 class DataBaseConfig
 {
     public $servername;

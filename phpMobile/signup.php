@@ -1,4 +1,5 @@
 <?php
+# API yang berfungsi untuk melakukan penambahan data user pada database / sign up berdasarkan detail hasil input yang diterima dari android app.
 header('Content-type:application/json;charset=utf-8');
 require "DataBase.php";
 $db = new DataBase();

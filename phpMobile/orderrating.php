@@ -1,5 +1,5 @@
 <?php
-#Untuk melakukan update data rating pada tabel order setiap user menyelesaikan order (KHUSUS STUDENT)
+# API yang berfungsi untuk melakukan update data rating pada tabel order setiap user menyelesaikan order (KHUSUS STUDENT)
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

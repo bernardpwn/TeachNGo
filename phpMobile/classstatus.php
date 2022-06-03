@@ -1,5 +1,5 @@
 <?php
-#Untuk update status class Active / Inactive
+#Untuk melakukan update status class Active / Inactive berdasarkan input class id serta status yang ingin di perbaharui
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

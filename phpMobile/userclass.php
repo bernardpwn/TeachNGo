@@ -1,5 +1,5 @@
 <?php
-#Untuk get Class yang diajar berdasarkan User Id
+# API yang berfungsi untuk menampilkan detail Class yang diajar berdasarkan User Id
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

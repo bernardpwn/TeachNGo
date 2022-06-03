@@ -1,4 +1,5 @@
 <?php
+# API yang berfungsi untuk mendapatkan detail user berdasarkan user id yang dikirim dari mobile app
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

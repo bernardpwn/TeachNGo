@@ -1,5 +1,5 @@
 <?php
-#Untuk menyelesaikan order
+# API yang berfungsi untuk menyelesaikan order berdasarkan order id yang diterima dari android app
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

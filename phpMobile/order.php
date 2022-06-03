@@ -1,5 +1,5 @@
 <?php
-#Untuk membuat order baru berdasarkan class_id yang dipilih
+# API yang berfungsi untuk menambahkan data order baru berdasarkan class_id yang dipilih
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

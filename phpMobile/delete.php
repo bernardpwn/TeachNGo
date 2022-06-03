@@ -1,4 +1,5 @@
 <?php
+# API yang ditujukan unttuk penghapusan akun pada database, tetapi sepertinya tidak akan digunakan untuk sementara.
 header('Content-type:application/json;charset=utf-8');
 require "DataBase.php";
 $db = new DataBase();

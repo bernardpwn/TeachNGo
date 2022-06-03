@@ -1,5 +1,5 @@
 <?php
-#Untuk menunjukkan 2 order rating terbaru untuk ditampilkan pada menu home
+# API yang berfungsi untuk menunjukkan 2 order rating terbaru untuk ditampilkan pada menu home
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

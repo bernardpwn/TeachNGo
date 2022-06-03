@@ -1,5 +1,5 @@
 <?php
-#Untuk update Profile
+# API yang berfungsi untuk melakukan update profile yang menerima input seperti user id yang ingin diupdate beserta beberapa detail lainnya yang ingin diupdate juga.
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

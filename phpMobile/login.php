@@ -1,4 +1,5 @@
 <?php
+# API yang berguna untuk menerima email serta password dari mobile app yang kemudian jika sesuai pada database, maka mengembalikan respons 1 yang berarti login succes, dan sebagainya.
 header('Content-type:application/json;charset=utf-8');
 require "DataBase.php";
 $db = new DataBase();

@@ -1,4 +1,5 @@
 <?php
+# Berfungsi sebagai detail penanganan beberapa fungsi yang dibuat pada file php lainnya, seperti koneksi database, login, serta sign up
 require "DataBaseConfig.php";
 
 class DataBase

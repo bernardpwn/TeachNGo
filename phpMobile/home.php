@@ -1,4 +1,6 @@
 <?php
+# API yang berfungsi untuk menerima email user yang telah login pada aplikasi dan mengembalikan detail user seperti user id, user name, user photo, serta user role untuk ditampilkan
+# pada halaman home dari android app yang dibuat
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

@@ -1,5 +1,5 @@
 <?php
-#Untuk update Suggest di table user dengan 3 input berupa 3 class suggetion berdasarkan hasil prediksi model
+# API yang berfungsi untuk melakukan update Suggest di table user dengan 3 input berupa 3 class suggetion berdasarkan hasil prediksi model
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";

@@ -1,4 +1,6 @@
 <?php
+# API yang berfungsi untuk menerima subject name dari android app kemudian menampilkan class id, user name, subject name, user gender, serta photo dari user 
+# guna menampilkan detail data class berdasarkan subject name yang diterima
     header('Content-type:application/json;charset=utf-8');
 	$servername = "34.101.231.16";
 	$username = "root";
