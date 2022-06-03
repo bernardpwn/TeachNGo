@@ -1,12 +1,12 @@
 <header>
-    <!--Sweet Alert Codes-->
-    <!--JQuery CDN-->
+     <!--Halaman awal atau login pada website admin-->
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!--Sweet Alert CDN-->
+    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </header>
+
 <?php 
- 
 include 'config.php';
  
 error_reporting(0);

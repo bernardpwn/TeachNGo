@@ -1,5 +1,6 @@
 <?php
- 
+ # file php untuk form admin yang dimana merupakan hasil interaksi pada halaman admin seperti jika actionnya add maka akan ditampilkan form untuk menambah admin baru
+ # atau jika actionnya edit maka form yang ditampilkan akan berisi detail dari admin yang telah dibaca dari database
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
 }

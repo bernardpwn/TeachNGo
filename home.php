@@ -1,5 +1,5 @@
 <?php 
- 
+# menampilkan halaman default setelah berhasil login pada website admin
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
 }

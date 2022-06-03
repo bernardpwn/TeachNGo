@@ -1,5 +1,5 @@
 <?php
-
+# file fungsi untuk mengkoneksikan database, serta fungsi mendapatkan file upload, serta mengecek file sudah sesuai atau belum dengan dengan yang diinginkan
 function koneksiDb(){
     try{
         

@@ -1,4 +1,5 @@
 <?php
+# Halaman yang menampilkan seluruh data pada tabel verifikasi yang bertujuan menampilkan keseluruhan request verifikasi yang dilakukan user yang terdapat pada database
 //1. Koneksi db
 require 'functions.php';
 $pdo = koneksiDb();

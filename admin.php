@@ -1,5 +1,5 @@
 <?php
- 
+# Halaman yang menampilkan seluruh data pada tabel admin yang bertujuan menampilkan akun admin siapa saja yang terdaftar pada database
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
 }

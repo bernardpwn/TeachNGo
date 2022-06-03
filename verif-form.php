@@ -1,4 +1,5 @@
 <?php
+# File php yang berguna untuk menampilkan jenis form pada halaman verification berdasarkan action yang dipilih pada halaman verification sebelumnya
 $action = $_GET['action'];
 if($_GET['action'] == "edit"){
     $button = "Verify";

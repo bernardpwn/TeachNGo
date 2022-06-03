@@ -1,4 +1,5 @@
 <?php
+# halaman yang berfungsi menampilkan seluruh kelas yang terdapat pada database
 //1. Koneksi db
 require 'functions.php';
 $pdo = koneksiDb();

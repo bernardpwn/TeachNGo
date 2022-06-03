@@ -1,5 +1,5 @@
 <?php
-
+# Halaman yang menampilkan seluruh data pada tabel subject yang bertujuan menampilkan keseluruhan subject yang terdaftar pada database
 //1. Koneksi db
 require 'functions.php';
 $pdo = koneksiDb();

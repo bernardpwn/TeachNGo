@@ -1,4 +1,5 @@
-<?php 
+<?php
+# Halaman Utama yang dipanggil oleh file php main
 session_start();
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");

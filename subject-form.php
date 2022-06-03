@@ -1,4 +1,5 @@
 <?php
+# File php yang berguna untuk menampilkan jenis form pada halaman subject berdasarkan action yang dipilih pada halaman subject sebelumnya
 $action = $_GET['action'];
 if($_GET['action'] == "add"){
     $page_title = "Add New Subject";

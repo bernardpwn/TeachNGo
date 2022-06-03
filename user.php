@@ -1,4 +1,5 @@
 <?php
+# Halaman untuk menampilkan daftar keseluruhan user yang ada pada database
 //1. Koneksi db
 require 'functions.php';
 $pdo = koneksiDb();
