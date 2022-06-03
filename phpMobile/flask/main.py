@@ -1,3 +1,6 @@
+# API flask dalam python yang berfungsi untuk menerima input user id yang ingin diprediksi dari android app, kemudian mengirimnya pada AI Platform yang dijalankan pada google cloud
+# Kemudian menerima dan menampilkannya dalam bentuk json response yang nantinya digunakan pada android app.
+
 from flask import Flask,request,jsonify
 import os
 from google.api_core.client_options import ClientOptions
@@ -10,7 +13,7 @@ def index():
 def predict():
     # Setup environment credentials (you'll need to change these)
     userid = request.form.get('userid')
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "delta-essence-349912-94f2494f5036.json" # change for your GCP key
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "delta-essence-349912-09595776bceb.json" # change for your GCP key
     PROJECT = "delta-essence-349912" # change for your GCP project
     REGION = "asia-southeast1" # change for your GCP region (where your model is hosted)
 
