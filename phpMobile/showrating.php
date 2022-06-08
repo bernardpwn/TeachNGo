@@ -15,10 +15,11 @@
 	}
     $response = array();
     $response["data"] = array();
-	$q=mysqli_query($conn,"SELECT User_Name, Order_Rating, Order_RatingDesc FROM Orders JOIN User ON Orders.User_Id = User.User_Id WHERE Order_RatingDesc IS NOT NULL AND Order_Status = 'Completed' ORDER BY Order_Id DESC LIMIT 2");
+	$q=mysqli_query($conn,"SELECT User_Name, User_Photo, Order_Rating, Order_RatingDesc FROM Orders JOIN User ON Orders.User_Id = User.User_Id WHERE Order_RatingDesc IS NOT NULL AND Order_Status = 'Completed' ORDER BY Order_Id DESC LIMIT 10");
     while($r = $q -> fetch_assoc()){
         $mhs = array();
-        $mhs["User_Name"] = $r["User_Name"]; 
+        $mhs["User_Name"] = $r["User_Name"];
+        $mhs["User_Photo"] = $r["User_Photo"]; 
         $mhs["Order_Rating"] = $r["Order_Rating"];
         $mhs["Order_RatingDesc"] = $r["Order_RatingDesc"];
         array_push($response["data"], $mhs);
